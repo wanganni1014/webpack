@@ -8558,9 +8558,7 @@ var react_dom = __webpack_require__(116);
 var Search = function Search() {
   return /*#__PURE__*/react.createElement("div", {
     className: "search-text less"
-  }, "Search Text", /*#__PURE__*/react.createElement("img", {
-    src: girl
-  }));
+  }, "Search Text");
 };
 
 react_dom.render( /*#__PURE__*/react.createElement(Search, null), document.getElementById('root'));

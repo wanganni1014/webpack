@@ -25,11 +25,23 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: ['style-loader', 'css-loader', {
+                    loader: 'px2rem-loader',
+                    options: {
+                        remUnit: 75,
+                        remPrecision: 8
+                    }
+                }]
             },
             {
                 test: /\.less$/,
-                use: ['style-loader', 'css-loader', 'less-loader']
+                use: ['style-loader', 'css-loader', 'less-loader', {
+                    loader: 'px2rem-loader',
+                    options: {
+                        remUnit: 75,
+                        remPrecision: 8
+                    }
+                }]
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/,

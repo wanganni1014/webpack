@@ -11,7 +11,7 @@ import Girl from './images/girl.jpeg';
 // }
 
 const Search = () => {
-    return <div className="search-text less">Search Text<img src={Girl} /></div>
+    return <div className="search-text less">Search Text</div>
 }
 
 ReactDOM.render(
