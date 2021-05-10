@@ -3,6 +3,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -15,7 +16,8 @@ module.exports = {
     devServer: {
         port: 9002,
         contentBase: path.resolve(__dirname, './dist'),
-        hot: true
+        hot: true,
+        stats: 'errors-only',
     },
     module: {
         rules: [
@@ -58,6 +60,7 @@ module.exports = {
             template: path.join(__dirname, './src/index.html'),
             minify: true
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new FriendlyErrorsWebpackPlugin()
     ]   
 }
