@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './search.css';
 import './search.less';
@@ -11,7 +11,16 @@ import Girl from './images/girl.jpeg';
 // }
 
 const Search = () => {
-    return <div className="search-text less">Search Text</div>
+    const [comp, setComp] = useState();
+    const clicked = () => {
+        import('./test.js').then(text => {
+            setComp(text.default);
+        })
+    }
+    return <div>
+        <div className="search-text less" onClick={clicked}>Search Text</div>
+        {comp && comp}
+    </div>
 }
 
 ReactDOM.render(
