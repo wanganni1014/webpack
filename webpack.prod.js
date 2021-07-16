@@ -31,8 +31,8 @@ module.exports = {
                 use: [MiniCSSExtractPlugin.loader, 'css-loader', 'postcss-loader', {
                     loader: 'px2rem-loader',
                     options: {
-                        remUnit: 75,
-                        remPrecision: 8
+                        remUnit: 75,  // rem相对px转换的单位, 1rem = 75px
+                        remPrecision: 8 //精度,后面小数点的位数
                     }
                 }]
             },
